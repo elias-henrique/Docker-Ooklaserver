@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: ooklaserver/Dockerfile
-    # volumes:
-    #   - './config:/srv:ro'
+    volumes:
+      - './config:/srv:rw'
     ports:
       - 8080:8080/udp
       - 8080:8080/tcp
