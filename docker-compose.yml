@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  ooklaserver:
+    container_name: ooklaserver
+    build:
+      context: .
+      dockerfile: ooklaserver/Dockerfile
+    volumes:
+      - './config:/srv:ro'
+    ports:
+      - 8080:8080/udp
+      - 8080:8080/tcp
+      - 5060:5060/udp
+      - 5060:5060/tcp
